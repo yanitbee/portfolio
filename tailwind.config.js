@@ -25,6 +25,33 @@ export default {
           light: '#6366f1', // Indigo
           DEFAULT: '#4f46e5',
           dark: '#4338ca',
+        },
+        midnight: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+          950: '#0a192f', // Midnight Blue
+        },
+        gold: {
+          50: '#fefce8',
+          100: '#fef9c3',
+          200: '#fef08a',
+          300: '#fde047',
+          400: '#facc15',
+          500: '#eab308',
+          600: '#ca8a04',
+          700: '#a16207',
+          800: '#854d0e',
+          900: '#713f12',
+          950: '#422006',
+          DEFAULT: '#d4af37', // Traditional Gold
         }
       },
       fontFamily: {
@@ -33,6 +60,8 @@ export default {
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out forwards',
         'slide-up': 'slideUp 0.5s ease-out forwards',
+        'bounce-subtle': 'bounceSubtle 2s infinite ease-in-out',
+        'spin-slow': 'spin 8s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -43,6 +72,10 @@ export default {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+        bounceSubtle: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+        }
       }
     },
   },

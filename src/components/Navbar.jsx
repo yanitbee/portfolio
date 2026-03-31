@@ -33,19 +33,22 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+    <nav className={`fixed w-full z-50 transition-all duration-300 tibeb-border ${
       scrolled ? 'nav-scrolled py-4 glass' : 'bg-transparent py-6'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center space-x-2">
-            <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center text-white shadow-lg shadow-accent/20">
+            <div className="w-10 h-10 bg-gold rounded-xl flex items-center justify-center text-midnight-950 shadow-lg shadow-gold/20">
               <Code2 size={24} />
             </div>
-            <span className="text-xl font-bold font-sans tracking-tight text-zinc-900 dark:text-white">
-              Yanit<span className="text-accent">.</span>
-            </span>
+            <div className="flex flex-col -space-y-1">
+              <span className="text-xs font-bold text-gold uppercase tracking-widest opacity-80">ያኒት</span>
+              <span className="text-xl font-bold font-sans tracking-tight text-zinc-900 dark:text-white">
+                Yanit<span className="text-gold">.</span>
+              </span>
+            </div>
           </div>
 
           {/* Desktop Nav */}
@@ -59,7 +62,7 @@ const Navbar = () => {
                 offset={-70}
                 duration={500}
                 className="nav-link"
-                activeClass="text-accent dark:text-accent font-semibold"
+                activeClass="text-gold dark:text-gold font-semibold"
               >
                 {link.label}
               </Link>
@@ -67,7 +70,7 @@ const Navbar = () => {
             
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-accent dark:hover:text-accent transition-colors"
+              className="p-2 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-gold dark:hover:text-gold transition-colors"
             >
               {isDark ? <Sun size={20} /> : <Moon size={20} />}
             </button>
