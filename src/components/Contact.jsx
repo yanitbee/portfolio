@@ -1,0 +1,185 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { 
+  Mail, 
+  Github, 
+  ExternalLink, 
+  Send, 
+  MessageSquare,
+  User,
+  AtSign
+} from 'lucide-react';
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simulate form submission
+    alert("Thanks for reaching out! This is a demo form.");
+    setFormData({ name: '', email: '', message: '' });
+  };
+
+  return (
+    <section id="contact" className="bg-white dark:bg-zinc-950">
+      <div className="section-container">
+        <div className="flex flex-col lg:flex-row gap-16">
+          {/* Contact Info */}
+          <div className="lg:w-1/3 space-y-12">
+            <div className="space-y-6">
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-accent font-semibold tracking-wider uppercase text-sm"
+              >
+                Connect
+              </motion.h2>
+              <motion.h3 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-4xl font-extrabold text-zinc-900 dark:text-white leading-tight"
+              >
+                Let's <span className="text-accent">Talk</span>
+              </motion.h3>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed"
+              >
+                Have a project in mind or just want to chat? I'm always open to new opportunities and collaborations.
+              </motion.p>
+            </div>
+
+            <div className="space-y-6">
+              <div className="flex items-center space-x-4 p-4 glass rounded-2xl border border-zinc-100 dark:border-zinc-800">
+                <div className="p-3 bg-accent/10 rounded-xl text-accent">
+                  <Mail size={24} />
+                </div>
+                <div>
+                    <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Email Me</h4>
+                    <p className="text-zinc-900 dark:text-white font-medium">yanit@example.com</p>
+                </div>
+              </div>
+
+               <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-4 p-4 bg-zinc-50 dark:bg-zinc-900 rounded-2xl border border-zinc-100 dark:border-zinc-800 hover:border-accent group transition-all"
+               >
+                <div className="p-3 bg-zinc-200 dark:bg-zinc-800 rounded-xl text-zinc-600 dark:text-zinc-400 group-hover:bg-accent group-hover:text-white transition-all">
+                  <Github size={24} />
+                </div>
+                <div className="flex-grow">
+                    <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">GitHub</h4>
+                    <p className="text-zinc-900 dark:text-white font-medium flex items-center">
+                        yanit-codes
+                        <ExternalLink className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity" size={14} />
+                    </p>
+                </div>
+              </a>
+
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-4 p-4 bg-zinc-50 dark:bg-zinc-900 rounded-2xl border border-zinc-100 dark:border-zinc-800 hover:border-accent group transition-all"
+               >
+                <div className="p-3 bg-zinc-200 dark:bg-zinc-800 rounded-xl text-zinc-600 dark:text-zinc-400 group-hover:bg-accent group-hover:text-white transition-all">
+                  <ExternalLink size={24} />
+                </div>
+                <div className="flex-grow">
+                    <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Upwork</h4>
+                    <p className="text-zinc-900 dark:text-white font-medium flex items-center">
+                        Yanit Developer
+                        <ExternalLink className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity" size={14} />
+                    </p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="lg:w-2/3 p-8 sm:p-12 bg-zinc-50 dark:bg-zinc-900 rounded-3xl border border-zinc-100 dark:border-zinc-800 shadow-xl shadow-zinc-200/50 dark:shadow-none"
+          >
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label htmlFor="name" className="text-xs font-bold text-zinc-400 uppercase tracking-widest ml-1 flex items-center">
+                    <User size={14} className="mr-2" />
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    placeholder="Your Name"
+                    className="w-full p-4 bg-white dark:bg-zinc-800 border-none rounded-xl focus:ring-2 focus:ring-accent outline-none text-zinc-900 dark:text-white dark:placeholder-zinc-500 transition-all font-medium"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-xs font-bold text-zinc-400 uppercase tracking-widest ml-1 flex items-center">
+                    <AtSign size={14} className="mr-2" />
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    placeholder="Your Email"
+                    className="w-full p-4 bg-white dark:bg-zinc-800 border-none rounded-xl focus:ring-2 focus:ring-accent outline-none text-zinc-900 dark:text-white dark:placeholder-zinc-500 transition-all font-medium"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  />
+                </div>
+              </div>
+              
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-xs font-bold text-zinc-400 uppercase tracking-widest ml-1 flex items-center">
+                  <MessageSquare size={14} className="mr-2" />
+                  Your Message
+                </label>
+                <textarea
+                  id="message"
+                  required
+                  rows="6"
+                  placeholder="How can I help you?"
+                  className="w-full p-4 bg-white dark:bg-zinc-800 border-none rounded-xl focus:ring-2 focus:ring-accent outline-none text-zinc-900 dark:text-white dark:placeholder-zinc-500 transition-all font-medium resize-none"
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                ></textarea>
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                type="submit"
+                className="w-full btn-primary flex items-center justify-center space-x-3 py-4 shadow-accent/20"
+              >
+                <span>Send Message</span>
+                <Send size={20} />
+              </motion.button>
+            </form>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
