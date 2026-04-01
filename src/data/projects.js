@@ -29,9 +29,10 @@ export const projects = [
       "Mobile-first Responsive Design",
       "Luxury-focused UI/UX with Smooth Animations"
     ],
-    liveLink: "#",
+    liveLink: "https://by2-six.vercel.app/",
     githubLink: "#",
     image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=800"
   }
 ];
+
 
