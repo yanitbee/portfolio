@@ -32,6 +32,23 @@ export const projects = [
     liveLink: "https://by2-six.vercel.app/",
     githubLink: "#",
     image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    id: 3,
+    title: "EventHub",
+    description: "A premium event discovery platform with a clean, modern design and seamless navigation.",
+    longDescription: "EventHub is a comprehensive landing page solution for events. It showcases a modern UI/UX design with smooth transitions, detailed event descriptions, and a responsive layout that ensures a great experience across all devices.",
+    tech: ["React", "React Router", "Tailwind CSS", "Framer Motion"],
+    features: [
+      "Dynamic Event Listings",
+      "Detailed Event Pages",
+      "Interactive Contact Form",
+      "Glassmorphic UI Elements",
+      "Fully Responsive Design"
+    ],
+    liveLink: "https://event-landing-page-umber-beta.vercel.app/",
+    githubLink: "#",
+    image: "https://images.unsplash.com/photo-1540575861501-7ad058211a37?auto=format&fit=crop&q=80&w=800"
   }
 ];
 
