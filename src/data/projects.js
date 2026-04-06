@@ -49,6 +49,23 @@ export const projects = [
     liveLink: "https://event-landing-page-umber-beta.vercel.app/",
     githubLink: "#",
     image: "https://images.unsplash.com/photo-1540575861501-7ad058211a37?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    id: 4,
+    title: "Velvet Brew",
+    description: "A premium, sophisticated web experience for a luxury café brand.",
+    longDescription: "Velvet Brew is a high-end café website showcasing a curated menu, elegant design, and seamless user experience. Built with a focus on luxury aesthetics and smooth interactions, it features a responsive layout and dynamic elements that bring the café atmosphere to life.",
+    tech: ["React", "Tailwind CSS", "Framer Motion", "React Router"],
+    features: [
+      "Elegant Menu Display",
+      "Responsive Coffee Shop UI",
+      "Smooth Page Transitions",
+      "Interactive User Reviews",
+      "Mobile-Optimized Experience"
+    ],
+    liveLink: "https://velvet-brew-cafe-psi.vercel.app/",
+    githubLink: "#",
+    image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=800"
   }
 ];
 
