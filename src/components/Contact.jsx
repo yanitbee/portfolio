@@ -62,7 +62,7 @@ const Contact = () => {
             </div>
 
             <div className="space-y-6">
-              <div className="flex items-center space-x-4 p-4 glass rounded-2xl border border-zinc-100 dark:border-white/10 hover:border-primary/30 transition-all group">
+              <a href="mailto:yanithaftomm@gmail.com" className="flex items-center space-x-4 p-4 glass rounded-2xl border border-zinc-100 dark:border-white/10 hover:border-primary/30 transition-all group">
                 <div className="p-3 bg-primary/10 rounded-xl text-primary group-hover:bg-primary group-hover:text-white transition-all">
                   <Mail size={24} />
                 </div>
@@ -70,10 +70,10 @@ const Contact = () => {
                     <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Email Me</h4>
                     <p className="text-zinc-900 dark:text-white font-medium">yanithaftomm@gmail.com</p>
                 </div>
-              </div>
+              </a>
 
                <a 
-                href="#" 
+                href="https://github.com/yanitbee" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center space-x-4 p-4 bg-zinc-50 dark:bg-zinc-900 rounded-2xl border border-zinc-100 dark:border-zinc-800 hover:border-primary group transition-all"
@@ -84,7 +84,7 @@ const Contact = () => {
                 <div className="flex-grow">
                     <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">GitHub</h4>
                     <p className="text-zinc-900 dark:text-white font-medium flex items-center">
-                        yanit-codes
+                        yanitbee
                         <ExternalLink className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity" size={14} />
                     </p>
                 </div>

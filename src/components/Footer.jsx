@@ -24,7 +24,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div className="flex items-center space-x-6 text-zinc-400 dark:text-midnight-400">
-             <a href="#" className="hover:text-primary dark:hover:text-primary transition-all duration-300 transform hover:-translate-y-1">
+             <a href="https://github.com/yanitbee" target="_blank" rel="noopener noreferrer" className="hover:text-primary dark:hover:text-primary transition-all duration-300 transform hover:-translate-y-1">
                 <Github size={22} />
              </a>
              <a href="#" className="hover:text-primary dark:hover:text-primary transition-all duration-300 transform hover:-translate-y-1">
@@ -33,7 +33,7 @@ const Footer = () => {
              <a href="#" className="hover:text-primary dark:hover:text-primary transition-all duration-300 transform hover:-translate-y-1">
                 <Twitter size={22} />
              </a>
-             <a href="#" className="hover:text-primary dark:hover:text-primary transition-all duration-300 transform hover:-translate-y-1">
+             <a href="mailto:yanithaftomm@gmail.com" className="hover:text-primary dark:hover:text-primary transition-all duration-300 transform hover:-translate-y-1">
                 <Mail size={22} />
              </a>
           </div>

@@ -87,10 +87,10 @@ const Hero = () => {
             transition={{ delay: 0.8 }}
             className="flex items-center space-x-8 text-zinc-400 dark:text-midnight-400 pt-10"
           >
-            <a href="#" className="hover:text-primary hover:scale-110 transition-all"><GithubIcon size={24} /></a>
+            <a href="https://github.com/yanitbee" target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:scale-110 transition-all"><GithubIcon size={24} /></a>
             <a href="#" className="hover:text-primary hover:scale-110 transition-all"><Linkedin size={24} /></a>
             <a href="#" className="hover:text-primary hover:scale-110 transition-all"><Twitter size={24} /></a>
-            <a href="#" className="hover:text-primary hover:scale-110 transition-all"><Mail size={24} /></a>
+            <a href="mailto:yanithaftomm@gmail.com" className="hover:text-primary hover:scale-110 transition-all"><Mail size={24} /></a>
           </motion.div>
         </motion.div>
 
