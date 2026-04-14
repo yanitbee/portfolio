@@ -22,7 +22,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          className="relative w-full max-w-4xl bg-white dark:bg-midnight-950 rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh] border border-gold/20"
+          className="relative w-full max-w-4xl bg-white dark:bg-midnight-950 rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh] border border-primary/20"
         >
           {/* Top Tibeb Border */}
           <div className="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-[#009b4d] via-[#ffcd00] to-[#ef3340] z-20"></div>
@@ -52,7 +52,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                   {project.tech.map((t) => (
                     <span 
                         key={t} 
-                        className="px-3 py-1 bg-gold/20 border border-gold/30 text-gold-light text-xs font-bold rounded-lg uppercase tracking-wider backdrop-blur-sm"
+                        className="px-3 py-1 bg-primary/20 border border-primary/30 text-primary-100 text-xs font-bold rounded-lg uppercase tracking-wider backdrop-blur-sm"
                     >
                       {t}
                     </span>
@@ -72,13 +72,13 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                   
                   <div className="space-y-4 pt-4">
                     <h4 className="text-lg font-bold text-zinc-900 dark:text-white flex items-center">
-                      <CheckCircle2 className="text-gold mr-2" size={20} />
+                      <CheckCircle2 className="text-primary mr-2" size={20} />
                       Key Features
                     </h4>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-zinc-600 dark:text-zinc-400">
                       {project.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
-                          <span className="w-2 h-2 bg-gold rotate-45 mt-2 mr-3 shrink-0" />
+                          <span className="w-2 h-2 bg-primary rotate-45 mt-2 mr-3 shrink-0" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -95,7 +95,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                         href={project.liveLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center space-x-2 w-full btn-primary text-sm py-2 px-4 shadow-gold/10"
+                        className="flex items-center justify-center space-x-2 w-full btn-primary text-sm py-2 px-4 shadow-primary/10"
                       >
                         <Globe size={18} />
                         <span>Live Demo</span>
@@ -122,3 +122,4 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 };
 
 export default ProjectModal;
+

@@ -18,8 +18,8 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="bg-midnight-50 dark:bg-midnight-900/40 relative overflow-hidden tibeb-pattern border-t border-gold/10">
-      <div className="geez-watermark top-10 left-10 text-gold opacity-5">ጥበብ</div>
+    <section id="projects" className="bg-midnight-50 dark:bg-midnight-900/40 relative overflow-hidden tibeb-pattern border-t border-primary/10">
+      <div className="geez-watermark top-10 left-10 text-primary opacity-5">ጥበብ</div>
       <div className="section-container">
         <div className="space-y-4 mb-20 text-center">
             <motion.h2 
@@ -27,11 +27,11 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="text-gold font-bold tracking-[0.2em] uppercase text-xs flex justify-center items-center"
+              className="text-primary font-bold tracking-[0.2em] uppercase text-xs flex justify-center items-center"
             >
-              <span className="w-8 h-[1px] bg-gold mr-3"></span>
+              <span className="w-8 h-[1px] bg-primary mr-3"></span>
               Portfolio
-              <span className="w-8 h-[1px] bg-gold ml-3"></span>
+              <span className="w-8 h-[1px] bg-primary ml-3"></span>
             </motion.h2>
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}
@@ -72,3 +72,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

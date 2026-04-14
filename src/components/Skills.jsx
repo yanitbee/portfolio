@@ -1,76 +1,93 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { skills } from '../data/skills';
+import { Code2, Database, Globe, Layers, Smartphone } from 'lucide-react';
 
 const Skills = () => {
+  const topSkills = [
+    { name: 'React & Next.js', percentage: 95, icon: Globe },
+    { name: 'Node.js & Express', percentage: 88, icon: Database },
+    { name: 'Tailwind CSS', percentage: 92, icon: Layers },
+    { name: 'MongoDB', percentage: 85, icon: Database },
+    { name: 'React Native', percentage: 82, icon: Smartphone },
+  ];
+
   return (
-    <section id="skills" className="bg-white dark:bg-midnight-950 relative overflow-hidden tibeb-pattern">
-      <div className="geez-watermark top-1/4 -right-10 rotate-45 text-gold opacity-5">ጥበብ</div>
-      <div className="section-container">
-        <div className="flex flex-col lg:flex-row gap-16">
-          {/* Header */}
-          <div className="lg:w-1/3 space-y-6">
-            <motion.h2 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="text-gold font-bold tracking-[0.2em] uppercase text-xs flex items-center"
-            >
-              <span className="w-8 h-[1px] bg-gold mr-3"></span>
-              Expertise
-            </motion.h2>
-            <motion.h3 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl font-extrabold text-midnight-900 dark:text-white leading-tight"
-            >
-              My Technical <span className="text-gold">Toolbox</span>
-            </motion.h3>
-            <motion.p 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed"
-            >
-              I use a modern stack to build robust and scalable applications. My focus is on creating clean, maintainable code other developers love.
-            </motion.p>
+    <section id="skills" className="bg-midnight-50 dark:bg-[#0b1120] relative overflow-hidden py-32 border-t border-white/5">
+      <div className="section-container relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          
+          {/* Left Side Decorative/Illustration */}
+          <div className="lg:w-1/2 w-full relative hidden lg:flex justify-center">
+            {/* Glowing Orbital Rings and Floating Elements */}
+            <div className="relative w-80 h-80">
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-[80px] animate-pulse"></div>
+              
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-2 border-primary/20 rounded-full animate-[spin_12s_linear_infinite]"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-primary/10 rounded-full animate-[spin_20s_linear_infinite_reverse]"></div>
+              
+              <motion.div 
+                animate={{ y: [0, -20, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute top-10 right-10 p-4 bg-[#0b1120] border border-primary/20 rounded-2xl shadow-[0_0_20px_rgba(14,165,233,0.3)] text-primary"
+              >
+                <Code2 size={32} />
+              </motion.div>
+
+              <motion.div 
+                animate={{ y: [0, 20, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+                className="absolute bottom-10 left-10 p-4 bg-[#0b1120] border border-accent/20 rounded-2xl shadow-[0_0_20px_rgba(56,189,248,0.3)] text-accent"
+              >
+                <Layers size={32} />
+              </motion.div>
+            </div>
           </div>
 
-          {/* Skills Grid */}
-          <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {skills.map((skillGroup, idx) => (
-              <motion.div
-                key={skillGroup.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="p-8 bg-white dark:bg-midnight-900/50 rounded-3xl border border-zinc-100 dark:border-white/10 shadow-xl hover:shadow-2xl hover:border-gold/30 transition-all duration-500 group relative overflow-hidden"
-              >
-                <div className="absolute top-0 left-0 w-1 h-full bg-gold scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top" />
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="p-3 bg-gold/10 rounded-2xl text-gold group-hover:bg-gold group-hover:text-midnight-950 transition-all duration-300">
-                    <skillGroup.icon size={24} />
+          {/* Right Side Skills List */}
+          <div className="lg:w-1/2 w-full space-y-10">
+            <div className="space-y-4 text-center lg:text-left">
+              <h2 className="text-4xl md:text-5xl font-bold text-midnight-900 dark:text-white">
+                My <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-glow-cyan">Skills</span>
+              </h2>
+              <p className="text-zinc-500 dark:text-zinc-400 max-w-lg mx-auto lg:mx-0">
+                I'm a passionate web developer with experience in creating modern, responsive applications. I specialize in full-stack development using cutting-edge technologies to deliver exceptional user experiences.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {topSkills.map((skill, index) => (
+                <motion.div 
+                  key={skill.name}
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="space-y-3"
+                >
+                  <div className="flex justify-between items-center text-sm font-medium">
+                    <div className="flex items-center space-x-3 text-zinc-300">
+                      <skill.icon size={18} className="text-primary" />
+                      <span>{skill.name}</span>
+                    </div>
+                    <span className="text-primary">{skill.percentage}%</span>
                   </div>
-                  <h4 className="text-xl font-bold dark:text-white group-hover:text-gold transition-colors">
-                    {skillGroup.name}
-                  </h4>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {skillGroup.items.map((skill) => (
-                    <span 
-                      key={skill} 
-                      className="px-3 py-1.5 bg-midnight-50 dark:bg-midnight-800/50 text-midnight-600 dark:text-midnight-300 text-xs font-bold rounded-xl border border-zinc-100 dark:border-white/5 transition-colors"
+                  {/* Progress Bar Container */}
+                  <div className="w-full h-2.5 bg-midnight-950/50 rounded-full overflow-hidden border border-white/5">
+                    {/* Progress Bar Fill */}
+                    <motion.div 
+                      key="progress"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.percentage}%` }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 + (index * 0.1), duration: 1, ease: "easeOut" }}
+                      className="h-full bg-gradient-to-r from-primary to-accent rounded-full shadow-[0_0_10px_rgba(14,165,233,0.8)] relative"
                     >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+                      <div className="absolute right-0 top-0 bottom-0 w-2 bg-white/50 blur-[1px]"></div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -79,3 +96,4 @@ const Skills = () => {
 };
 
 export default Skills;
+

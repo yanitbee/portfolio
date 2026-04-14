@@ -4,11 +4,12 @@
 
 :root {
   --primary: #0ea5e9;
-  --accent: #4f46e5;
-  --midnight: #0a192f;
+  --primary-glow: #00f0ff;
+  --accent: #38bdf8;
+  --midnight: #0b1120;
   --gold: #d4af37;
   --bg-light: #ffffff;
-  --bg-dark: #0a192f;
+  --bg-dark: #0b1120;
 }
 
 html {
@@ -30,16 +31,24 @@ html {
     @apply backdrop-blur-md bg-white/70 dark:bg-midnight-950/70 border border-white/20 dark:border-white/10 backdrop-filter;
   }
 
-  .nav-link {
-    @apply relative text-zinc-600 hover:text-midnight-950 dark:text-zinc-400 dark:hover:text-gold transition-colors cursor-pointer text-sm font-medium;
+  .glass-pill {
+    @apply backdrop-blur-xl bg-white/40 dark:bg-[#0b1120]/60 border border-white/20 dark:border-white/10 backdrop-filter shadow-2xl;
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4), 0 0 30px rgba(0, 240, 255, 0.2);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.6), 0 0 20px rgba(0, 240, 255, 0.4);
   }
 
   .btn-primary {
-    @apply bg-gold hover:bg-gold-600 text-midnight-950 font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-xl shadow-gold/20 active:scale-95;
+    @apply bg-primary hover:bg-sky-400 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(14,165,233,0.5)] active:scale-95;
   }
 
   .btn-secondary {
-    @apply bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-midnight-950 font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-sm active:scale-95;
+    @apply bg-transparent border-2 border-primary text-primary hover:bg-primary/10 font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-[0_0_10px_rgba(14,165,233,0.2)] active:scale-95;
   }
 
   .tibeb-border {

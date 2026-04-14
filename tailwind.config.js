@@ -20,6 +20,7 @@ export default {
           800: '#075985',
           900: '#0c4a6e',
           950: '#082f49',
+          DEFAULT: '#0ea5e9',
         },
         accent: {
           light: '#6366f1', // Indigo

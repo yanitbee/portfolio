@@ -15,23 +15,24 @@ const About = () => {
             viewport={{ once: true }}
             className="hidden lg:block w-1/3 relative"
           >
-            <div className="aspect-[4/5] bg-gold rounded-3xl overflow-hidden relative shadow-2xl transition-transform hover:scale-[1.02] duration-500">
+            <div className="aspect-[4/5] bg-primary rounded-3xl overflow-hidden relative shadow-2xl transition-transform hover:scale-[1.02] duration-500">
               <img 
-                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=800" 
-                alt="Ethiopian Coffee" 
+                src="/baby.jpeg" 
+                alt="Orange Kitten" 
                 className="w-full h-full object-cover mix-blend-overlay opacity-80"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-gold-900/80 to-transparent"></div>
-              <div className="absolute bottom-8 left-8 text-white space-y-2">
-                <p className="text-3xl font-bold italic">“ጥበብ በገንዘብ አይገዛም”</p>
-                <div className="flex items-center space-x-2 text-gold-200">
-                  <CoffeeBean className="w-5 h-5" />
-                  <span className="font-medium">Wisdom is priceless</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-900/80 to-transparent"></div>
+              <div className="absolute bottom-6 left-6 right-6 text-white space-y-2">
+                <p className="text-xl font-bold italic drop-shadow-md leading-relaxed">
+                  “ከኃጢአት በቀር በነገር ሁሉ እንደ እኛ የተፈተነ ነው እንጂ፥ በድካማችን ሊራራልን የማይችል ሊቀ ካህናት የለንም።”
+                </p>
+                <div className="flex items-center space-x-2 text-primary-200">
+                  <span className="font-semibold text-sm">ወደ ዕብራዊያን 4-15</span>
                 </div>
               </div>
             </div>
             {/* Background elements */}
-            <div className="absolute -z-10 -bottom-6 -right-6 w-full h-full border-2 border-gold rounded-3xl opacity-30"></div>
+            <div className="absolute -z-10 -bottom-6 -right-6 w-full h-full border-2 border-primary rounded-3xl opacity-30"></div>
           </motion.div>
 
           {/* Text Content */}
@@ -42,8 +43,8 @@ const About = () => {
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <h2 className="text-gold font-bold tracking-[0.2em] uppercase text-xs flex items-center">
-                <span className="w-8 h-[1px] bg-gold mr-3"></span>
+              <h2 className="text-primary font-bold tracking-[0.2em] uppercase text-xs flex items-center">
+                <span className="w-8 h-[1px] bg-primary mr-3"></span>
                 About Me
               </h2>
               <h3 className="text-4xl font-bold text-midnight-900 dark:text-white leading-tight">
@@ -59,7 +60,7 @@ const About = () => {
               className="grid grid-cols-1 md:grid-cols-2 gap-8"
             >
               <div className="space-y-4">
-                <div className="flex items-center space-x-3 text-gold">
+                <div className="flex items-center space-x-3 text-primary">
                   <CoffeeBean className="w-6 h-6" />
                   <h4 className="text-lg font-semibold dark:text-white">Education</h4>
                 </div>
@@ -69,7 +70,7 @@ const About = () => {
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-center space-x-3 text-gold">
+                <div className="flex items-center space-x-3 text-primary">
                   <CoffeeBean className="w-6 h-6" />
                   <h4 className="text-lg font-semibold dark:text-white">Passion</h4>
                 </div>
@@ -93,7 +94,7 @@ const About = () => {
                 {['Detail-Oriented', 'Problem Solver', 'Team Player', 'Fast Learner'].map((trait) => (
                   <span 
                     key={trait} 
-                    className="px-4 py-2 bg-gold/10 dark:bg-gold/5 text-gold-700 dark:text-gold-300 text-xs font-bold rounded-full uppercase tracking-wider border border-gold/20"
+                    className="px-4 py-2 bg-primary/10 dark:bg-primary/5 text-primary-700 dark:text-primary-300 text-xs font-bold rounded-full uppercase tracking-wider border border-primary/20"
                   >
                     {trait}
                   </span>
@@ -108,3 +109,4 @@ const About = () => {
 };
 
 export default About;
+

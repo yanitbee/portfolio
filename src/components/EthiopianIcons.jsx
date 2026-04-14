@@ -26,3 +26,4 @@ export const CoffeeBean = ({ className }) => (
     <path d="M20 50C20 50 50 70 80 50" stroke="white" strokeWidth="2" strokeOpacity="0.3" strokeLinecap="round"/>
   </svg>
 );
+
