@@ -90,23 +90,7 @@ const Contact = () => {
                 </div>
               </a>
 
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-4 p-4 bg-zinc-50 dark:bg-zinc-900 rounded-2xl border border-zinc-100 dark:border-zinc-800 hover:border-primary group transition-all"
-               >
-                <div className="p-3 bg-zinc-200 dark:bg-zinc-800 rounded-xl text-zinc-600 dark:text-zinc-400 group-hover:bg-primary group-hover:text-white transition-all">
-                  <ExternalLink size={24} />
-                </div>
-                <div className="flex-grow">
-                    <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Upwork</h4>
-                    <p className="text-zinc-900 dark:text-white font-medium flex items-center">
-                        Yanit Developer
-                        <ExternalLink className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity" size={14} />
-                    </p>
-                </div>
-              </a>
+
             </div>
           </div>
 

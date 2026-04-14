@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Floating Sidebar */}
-      <nav className="hidden md:flex flex-col items-center justify-center fixed left-6 top-1/2 -translate-y-1/2 z-50 glass-pill py-8 px-4 rounded-full space-y-6">
+      <nav className="hidden md:flex flex-col items-center justify-center fixed right-6 top-1/2 -translate-y-1/2 z-50 glass-pill py-8 px-4 rounded-full space-y-6">
         <Link 
           to="home" 
           spy={true} smooth={true} duration={500} 
@@ -54,7 +54,7 @@ const Navbar = () => {
           >
             <link.icon size={22} className="group-hover:scale-110 transition-transform"/>
             {/* Tooltip */}
-            <span className="absolute left-14 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-midnight-950 text-white text-xs font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-white/10 backdrop-blur-md">
+            <span className="absolute right-14 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-midnight-950 text-white text-xs font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-white/10 backdrop-blur-md">
               {link.label}
             </span>
           </Link>
