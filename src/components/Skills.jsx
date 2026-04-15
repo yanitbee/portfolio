@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Database, Globe, Layers, Smartphone } from 'lucide-react';
-import { SiCss3, SiHtml5, SiJavascript, SiMongodb, SiReact } from 'react-icons/si';
 
 const Skills = () => {
   const topSkills = [
@@ -14,7 +13,7 @@ const Skills = () => {
   const floatingTechIcons = [
     {
       name: 'HTML',
-      Icon: SiHtml5,
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
       className: 'top-8 left-10 text-orange-400',
       duration: 4.5,
       delay: 0,
@@ -22,7 +21,7 @@ const Skills = () => {
     },
     {
       name: 'CSS',
-      Icon: SiCss3,
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
       className: 'top-16 right-8 text-sky-400',
       duration: 5,
       delay: 0.4,
@@ -30,7 +29,7 @@ const Skills = () => {
     },
     {
       name: 'React',
-      Icon: SiReact,
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
       className: 'top-1/2 -right-2 text-cyan-300',
       duration: 5.5,
       delay: 0.8,
@@ -38,7 +37,7 @@ const Skills = () => {
     },
     {
       name: 'JavaScript',
-      Icon: SiJavascript,
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
       className: 'bottom-16 left-8 text-amber-300',
       duration: 4.8,
       delay: 1.2,
@@ -46,7 +45,7 @@ const Skills = () => {
     },
     {
       name: 'MongoDB',
-      Icon: SiMongodb,
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
       className: 'bottom-8 right-12 text-emerald-400',
       duration: 5.2,
       delay: 1.6,
@@ -68,14 +67,14 @@ const Skills = () => {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-2 border-primary/20 rounded-full animate-[spin_12s_linear_infinite]"></div>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-primary/10 rounded-full animate-[spin_20s_linear_infinite_reverse]"></div>
               
-              {floatingTechIcons.map(({ name, Icon, className, duration, delay, y }) => (
+              {floatingTechIcons.map(({ name, src, className, duration, delay, y }) => (
                 <motion.div
                   key={name}
                   animate={{ y: [0, y, 0] }}
                   transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }}
                   className={`absolute p-4 bg-[#0b1120] border border-primary/25 rounded-2xl shadow-[0_0_20px_rgba(14,165,233,0.25)] ${className}`}
                 >
-                  <Icon size={30} />
+                  <img src={src} alt={`${name} icon`} className="w-[30px] h-[30px]" />
                 </motion.div>
               ))}
             </div>
