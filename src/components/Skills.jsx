@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Database, Globe, Layers, Smartphone } from 'lucide-react';
+import { SiCss3, SiHtml5, SiJavascript, SiMongodb, SiReact } from 'react-icons/si';
 
 const Skills = () => {
   const topSkills = [
@@ -9,6 +10,48 @@ const Skills = () => {
     { name: 'Tailwind CSS', percentage: 92, icon: Layers },
     { name: 'MongoDB', percentage: 85, icon: Database },
     { name: 'React Native', percentage: 82, icon: Smartphone },
+  ];
+  const floatingTechIcons = [
+    {
+      name: 'HTML',
+      Icon: SiHtml5,
+      className: 'top-8 left-10 text-orange-400',
+      duration: 4.5,
+      delay: 0,
+      y: -18,
+    },
+    {
+      name: 'CSS',
+      Icon: SiCss3,
+      className: 'top-16 right-8 text-sky-400',
+      duration: 5,
+      delay: 0.4,
+      y: 18,
+    },
+    {
+      name: 'React',
+      Icon: SiReact,
+      className: 'top-1/2 -right-2 text-cyan-300',
+      duration: 5.5,
+      delay: 0.8,
+      y: -15,
+    },
+    {
+      name: 'JavaScript',
+      Icon: SiJavascript,
+      className: 'bottom-16 left-8 text-amber-300',
+      duration: 4.8,
+      delay: 1.2,
+      y: 16,
+    },
+    {
+      name: 'MongoDB',
+      Icon: SiMongodb,
+      className: 'bottom-8 right-12 text-emerald-400',
+      duration: 5.2,
+      delay: 1.6,
+      y: -20,
+    },
   ];
 
   return (
@@ -25,21 +68,16 @@ const Skills = () => {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-2 border-primary/20 rounded-full animate-[spin_12s_linear_infinite]"></div>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-primary/10 rounded-full animate-[spin_20s_linear_infinite_reverse]"></div>
               
-              <motion.div 
-                animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute top-10 right-10 p-4 bg-[#0b1120] border border-primary/20 rounded-2xl shadow-[0_0_20px_rgba(14,165,233,0.3)] text-primary"
-              >
-                <Code2 size={32} />
-              </motion.div>
-
-              <motion.div 
-                animate={{ y: [0, 20, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                className="absolute bottom-10 left-10 p-4 bg-[#0b1120] border border-accent/20 rounded-2xl shadow-[0_0_20px_rgba(56,189,248,0.3)] text-accent"
-              >
-                <Layers size={32} />
-              </motion.div>
+              {floatingTechIcons.map(({ name, Icon, className, duration, delay, y }) => (
+                <motion.div
+                  key={name}
+                  animate={{ y: [0, y, 0] }}
+                  transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }}
+                  className={`absolute p-4 bg-[#0b1120] border border-primary/25 rounded-2xl shadow-[0_0_20px_rgba(14,165,233,0.25)] ${className}`}
+                >
+                  <Icon size={30} />
+                </motion.div>
+              ))}
             </div>
           </div>
 
