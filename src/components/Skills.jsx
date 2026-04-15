@@ -14,42 +14,27 @@ const Skills = () => {
     {
       name: 'HTML',
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-      className: 'top-8 left-10 text-orange-400',
-      duration: 4.5,
-      delay: 0,
-      y: -18,
+      glow: 'shadow-[0_0_20px_rgba(249,115,22,0.25)]',
     },
     {
       name: 'CSS',
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-      className: 'top-16 right-8 text-sky-400',
-      duration: 5,
-      delay: 0.4,
-      y: 18,
+      glow: 'shadow-[0_0_20px_rgba(56,189,248,0.25)]',
     },
     {
       name: 'React',
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-      className: 'top-1/2 -right-2 text-cyan-300',
-      duration: 5.5,
-      delay: 0.8,
-      y: -15,
+      glow: 'shadow-[0_0_20px_rgba(34,211,238,0.25)]',
     },
     {
       name: 'JavaScript',
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-      className: 'bottom-16 left-8 text-amber-300',
-      duration: 4.8,
-      delay: 1.2,
-      y: 16,
+      glow: 'shadow-[0_0_20px_rgba(250,204,21,0.2)]',
     },
     {
       name: 'MongoDB',
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-      className: 'bottom-8 right-12 text-emerald-400',
-      duration: 5.2,
-      delay: 1.6,
-      y: -20,
+      glow: 'shadow-[0_0_20px_rgba(16,185,129,0.25)]',
     },
   ];
 
@@ -67,16 +52,35 @@ const Skills = () => {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-2 border-primary/20 rounded-full animate-[spin_12s_linear_infinite]"></div>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 border border-primary/10 rounded-full animate-[spin_20s_linear_infinite_reverse]"></div>
               
-              {floatingTechIcons.map(({ name, src, className, duration, delay, y }) => (
-                <motion.div
-                  key={name}
-                  animate={{ y: [0, y, 0] }}
-                  transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }}
-                  className={`absolute p-4 bg-[#0b1120] border border-primary/25 rounded-2xl shadow-[0_0_20px_rgba(14,165,233,0.25)] ${className}`}
-                >
-                  <img src={src} alt={`${name} icon`} className="w-[30px] h-[30px]" />
-                </motion.div>
-              ))}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 26, repeat: Infinity, ease: 'linear' }}
+                className="absolute inset-0"
+              >
+                {floatingTechIcons.map(({ name, src, glow }, index) => {
+                  const angle = (360 / floatingTechIcons.length) * index - 90;
+                  const radius = 136;
+
+                  return (
+                    <div
+                      key={name}
+                      className="absolute top-1/2 left-1/2"
+                      style={{
+                        transform: `translate(-50%, -50%) rotate(${angle}deg) translateY(-${radius}px)`,
+                      }}
+                    >
+                      <div
+                        className="rounded-2xl border border-primary/25 bg-midnight-900/90 backdrop-blur-md p-3"
+                        style={{ transform: `rotate(${-angle}deg)` }}
+                      >
+                        <div className={`rounded-xl p-2 bg-midnight-950/90 ${glow}`}>
+                          <img src={src} alt={`${name} icon`} className="w-7 h-7" />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </motion.div>
             </div>
           </div>
 
